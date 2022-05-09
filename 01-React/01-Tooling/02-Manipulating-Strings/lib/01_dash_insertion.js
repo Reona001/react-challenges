@@ -1,8 +1,23 @@
 function insertDash(word) {
   // TODO: implement the method and return word with dashes
-  if (word === "") {
-    return "";
-  } else if ( // function )
+  let wordArray = Array.from(word);
+  //['h','e','l','l','o']
+  let preJoinArray = wordArray.map(//function)
+
+  wordArray.forEach(letter => {
+    let vowelIndexArray = [];
+    if (letter.match(/[aeiou]/)) {
+      let vowelIndex = wordArray.indexOf(`${letter}`);
+      vowelIndexArray.push(vowelIndex);
+      // wordArray.splice(`${vowelIndex}`, 0, '-');
+      // wordArray.map();
+    }
+    console.log(vowelIndexArray);
+  })
+
+  // if (word === "") {
+  //   return "";
+  // } else if ( // function )
   return null;
 }
 
@@ -15,4 +30,9 @@ module.exports = insertDash;
 // If there is no CC repetition then it will compound the collection
 // (in-ter-nationalization)
 // (VC-CVC-CVCVVCVCVCVCVVN)
+//  (VCCVCCVCVVCVCVCVCVVN)
+//   (VCCVCCVCVVCVCVCVCVVN)
+
+
+// [012345678910]
 // So we need a if conditional to detect no CC repeats
