@@ -6,15 +6,13 @@ function insertDash(word) {
   let vowelIndexArray = [];
   wordArray.forEach(letter => {
     if (letter.match(/[aeiou]/)) {
-      vowelIndexArray.push(letter);
-      // let vowelIndex = wordArray.indexOf(`${letter}`);
-      // vowelIndexArray.push(vowelIndex);
+      // vowelIndexArray.push(letter);
+      let vowelIndex = wordArray.indexOf(`${letter}`);
+      vowelIndexArray.push(vowelIndex);
       // wordArray.splice(`${vowelIndex}`, 0, '-');
-      // wordArray.map();
     }
-    console.log(vowelIndexArray);
   })
-
+  return vowelIndexArray;
   // if (word === "") {
   //   return "";
   // } else if ( // function )
