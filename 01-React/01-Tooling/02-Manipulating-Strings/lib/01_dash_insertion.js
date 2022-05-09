@@ -2,13 +2,13 @@ function insertDash(word) {
   // TODO: implement the method and return word with dashes
   let wordArray = Array.from(word);
   //['h','e','l','l','o']
-  let preJoinArray = wordArray.map(//function)
 
+  let vowelIndexArray = [];
   wordArray.forEach(letter => {
-    let vowelIndexArray = [];
     if (letter.match(/[aeiou]/)) {
-      let vowelIndex = wordArray.indexOf(`${letter}`);
-      vowelIndexArray.push(vowelIndex);
+      vowelIndexArray.push(letter);
+      // let vowelIndex = wordArray.indexOf(`${letter}`);
+      // vowelIndexArray.push(vowelIndex);
       // wordArray.splice(`${vowelIndex}`, 0, '-');
       // wordArray.map();
     }
