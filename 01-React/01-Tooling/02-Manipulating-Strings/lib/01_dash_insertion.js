@@ -1,25 +1,17 @@
+// function insertDash(word) {
+//   return null;
+// }
+
 const consonantRegEx = /[bcdfghjklmnpqrstvwxys]/;
 const vowelRegEx = /[aeiou]/;
 
-function insertDash(word) {
-  let wordArray = wordToArray(word);
-  let patternArray = consonantDetect(wordArray);
-  let indexArray = cvArrayToIndex(patternArray);
-  return spliceDash(word, indexArray)
-  return null;
-}
-
-
-
 function wordToArray(word) {
-  let wordArray = Array.from(word);
+  const wordArray = Array.from(word);
   return wordArray;
 }
 
-
-
 function consonantDetect(cvArray) {
-  let cvDetectResult = [];
+  const cvDetectResult = [];
   for (let i = 0; i < cvArray.length; i++) {
     if (cvArray[i].match(consonantRegEx)) {
       cvDetectResult.push('c');
@@ -27,14 +19,13 @@ function consonantDetect(cvArray) {
       cvDetectResult.push('v');
     }
   }
-  console.log(cvDetectResult);
+  //   console.log(cvDetectResult);
   return cvDetectResult;
 }
 
-
 function cvArrayToIndex(cvArray2) {
-  let arrayLength = 0
-  let repeatIndex = [];
+  let arrayLength = 0;
+  const repeatIndex = [];
   for (let i = 0; i < cvArray2.length; i++) {
     if (cvArray2[i] === cvArray2[i + 1] && cvArray2[i] === 'c') {
       arrayLength++;
@@ -44,21 +35,24 @@ function cvArrayToIndex(cvArray2) {
   return repeatIndex;
 }
 
-
-
 function spliceDash(word, numArray) {
-  let wordArray = wordToArray(word);
-  console.log(numArray)
-  numArray.forEach(num =>
-    wordArray.splice(num, 0, '-'))
-  wordArrayJoin = wordArray.join('');
+  const wordArray = wordToArray(word);
+  //   console.log(numArray);
+  numArray.forEach((num) => wordArray.splice(num, 0, '-'));
+  const wordArrayJoin = wordArray.join('');
+  console.log(wordArrayJoin)
   return wordArrayJoin;
-
 }
 
-// console.log(insertDash('hello'));
-// console.log(insertDash('internationalization'))
-// console.log(insertDash('Le Wagon'))
-// should get 'In-ter-nationalization'
+function insertDash(word) {
+  const wordArray = wordToArray(word);
+  const patternArray = consonantDetect(wordArray);
+  const indexArray = cvArrayToIndex(patternArray);
+  const result = spliceDash(word, indexArray);
+  console.log(result);
+  return result;
+}
+
+console.log(insertDash('internationalization'));
 
 module.exports = insertDash;
