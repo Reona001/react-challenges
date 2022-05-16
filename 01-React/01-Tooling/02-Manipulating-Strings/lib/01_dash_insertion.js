@@ -2,10 +2,11 @@
 //   return null;
 // }
 
-const consonantRegEx = /[bcdfghjklmnpqrstvwxys]/;
-const vowelRegEx = /[aeiou]/;
+const consonantRegEx = /[bcdfghjklmnpqrstvwxysBCDFGHJKLMNPQRSTVWXYS]/;
+const vowelRegEx = /[aeiouAEIOU]/;
 
 function wordToArray(word) {
+  // lowercaseWord = word.toLowerCase();
   const wordArray = Array.from(word);
   return wordArray;
 }
