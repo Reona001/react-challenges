@@ -1,7 +1,3 @@
-// function insertDash(word) {
-//   return null;
-// }
-
 const consonantRegEx = /[bcdfghjklmnpqrstvwxysBCDFGHJKLMNPQRSTVWXYS]/;
 const vowelRegEx = /[aeiouAEIOU]/;
 
@@ -13,7 +9,7 @@ function wordToArray(word) {
 
 function consonantDetect(cvArray) {
   const cvDetectResult = [];
-  for (let i = 0; i < cvArray.length; i++) {
+  for (let i = 0; i < cvArray.length; i += 1) {
     if (cvArray[i].match(consonantRegEx)) {
       cvDetectResult.push('c');
     } else if (cvArray[i].match(vowelRegEx)) {
@@ -27,9 +23,9 @@ function consonantDetect(cvArray) {
 function cvArrayToIndex(cvArray2) {
   let arrayLength = 0;
   const repeatIndex = [];
-  for (let i = 0; i < cvArray2.length; i++) {
+  for (let i = 0; i < cvArray2.length; i += 1) {
     if (cvArray2[i] === cvArray2[i + 1] && cvArray2[i] === 'c') {
-      arrayLength++;
+      arrayLength += 1;
       repeatIndex.push(i + arrayLength);
     }
   }
@@ -41,7 +37,7 @@ function spliceDash(word, numArray) {
   //   console.log(numArray);
   numArray.forEach((num) => wordArray.splice(num, 0, '-'));
   const wordArrayJoin = wordArray.join('');
-  console.log(wordArrayJoin)
+  console.log(wordArrayJoin);
   return wordArrayJoin;
 }
 
