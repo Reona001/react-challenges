@@ -8,6 +8,13 @@ function occurrences(text, word) {
   const lowerArray = splitText.map(lowerCase);
   console.log(lowerArray); // => ['lorem','ipsum','dolor','sit']
   // return null;
+  let occurenceCounter = 0;
+  for (let i = 0; i < lowerArray.length; i += 1) {
+    if (lowerArray[i] === word) {
+      occurenceCounter += 1;
+    }
+  }
+  return occurenceCounter;
 }
 
 module.exports = occurrences;
