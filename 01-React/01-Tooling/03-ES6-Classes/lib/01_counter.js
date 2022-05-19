@@ -6,7 +6,6 @@
 //   }
 // }
 // module.exports = Counter;
-
 class Counter {
   constructor(text) {
     this.text = text;
@@ -23,24 +22,23 @@ class Counter {
       let counter = 0;
       for (let i = 0; i < processArray.length; i += 1) {
         if (processArray[i] === theWord) {
-          counter += 1
+          counter += 1;
         }
       }
 
       newMap.set(`${theWord}`, `${counter}`);
 
-    });
-    console.log(newMap);
-    console.log(newMap.get(word));
 
+    });
+    // console.log(newMap.get(word));
+    const stringNum = newMap.get(word);
+    return parseInt(stringNum, 10);
+
+    // console.log(newMap);
+    // console.log(newMap.get(word));
   }
 
-  // get lowercaseArray() {
-  //   return this.splitText();
-  // }
-
 }
-
 module.exports = Counter;
 
 // const counter = new Counter('Lorem Ipsum lorem ipsum set amet');
