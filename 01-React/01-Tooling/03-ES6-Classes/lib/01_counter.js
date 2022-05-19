@@ -1,17 +1,51 @@
+// class Counter {
+//   constructor(text) {
+//   }
+
+//   occurrences(word) {
+//   }
+// }
+// module.exports = Counter;
+
 class Counter {
   constructor(text) {
     this.text = text;
-    // TODO: build an internal Map of word => occurrences.
-    // 1. Run the text into occurence for all text passed into the function
-    // 2. Create a map of words and their occurrences as an iteger (key value pair)
   }
 
+  // Method //
   occurrences(word) {
-    return this.occurence
-    // TODO: return the number of occurrences
-    // Query for the above map constructor to get integer
-    // by passing in argument 'word'
+    const array = this.text.split('');
+    const textArray = array.map(element => element.toLowerCase());
+    const processArray = textArray.join('').split(' ');
+
+    const newMap = new Map();
+    processArray.forEach((theWord) => {
+      let counter = 0;
+      for (let i = 0; i < processArray.length; i += 1) {
+        if (processArray[i] === theWord) {
+          counter += 1
+        }
+      }
+
+      newMap.set(`${theWord}`, `${counter}`);
+
+    });
+    console.log(newMap);
+    console.log(newMap.get(word));
+
   }
+
+  // get lowercaseArray() {
+  //   return this.splitText();
+  // }
+
 }
 
 module.exports = Counter;
+
+// const counter = new Counter('Lorem Ipsum lorem ipsum set amet');
+
+// const counter2 = new Counter('this is that this that this');
+
+// counter.occurrences('lorem');
+// counter2.occurrences('is');
