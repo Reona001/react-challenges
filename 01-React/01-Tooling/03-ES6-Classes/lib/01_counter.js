@@ -15,22 +15,25 @@ class Counter {
   occurrences(word) {
     const array = this.text.split('');
     const textArray = array.map(element => element.toLowerCase());
+    const justJoin = textArray.join('');
     const processArray = textArray.join('').split(' ');
 
     const newMap = new Map();
     processArray.forEach((theWord) => {
       let counter = 0;
       for (let i = 0; i < processArray.length; i += 1) {
-        if (processArray[i] === theWord) {
+        if (processArray[i] === "" || !justJoin.includes(theWord)) {
+          return 0;
+        } else if (processArray[i] === theWord) {
           counter += 1;
         }
       }
-
       newMap.set(`${theWord}`, `${counter}`);
+      console.log(newMap);
 
 
     });
-    // console.log(newMap.get(word));
+    console.log(newMap.get(word));
     const stringNum = newMap.get(word);
     return parseInt(stringNum, 10);
 
