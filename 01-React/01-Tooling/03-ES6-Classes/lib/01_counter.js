@@ -35,9 +35,7 @@ class Counter {
     const stringNum = newMap.get(word);
     if (isNaN(stringNum)) {
       return 0;
-    } else {
-      return parseInt(stringNum, 10);
-    }
+    } return parseInt(stringNum, 10);
   }
 }
 module.exports = Counter;
