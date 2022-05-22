@@ -69,7 +69,7 @@ The questions prompted by eslint are now different from the ones showed in the l
 - ❯ JavaScript
 
 8. ? Would you like to install them now with npm? (Y/n)
-- ❯ Type the `n` key. -- We use `yarn` as a package manager, not `npm` 👌 
+- ❯ Type the `n` key. -- We use `yarn` as a package manager, not `npm` 👌
 
 And finally if everything went right, you should see this message:
 
