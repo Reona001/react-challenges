@@ -17,7 +17,7 @@ class Greeter {
   }
 
   sayHello() {
-    debugger
+    // debugger
     document.body.innerHTML = `Hello ${this.name}!`;
   }
 }
